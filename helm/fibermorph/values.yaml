@@ -1,0 +1,15 @@
+global:
+  imagePullSecrets: []
+
+ingress:
+  hostname: tandem-prod.apps.aws.web.umich.edu
+
+image:
+  registry: docker.io
+  repository: lsatsrciresearch/fibermorph
+  tag: latest
+  pullPolicy: Always
+
+application:
+  logLevel: debug
+  disableDocs: true

@@ -1,0 +1,14 @@
+apiVersion: v2
+name: fibermorph
+description: A Helm chart for the Fibermorph web app
+icon: https://console-openshift-console.apps.gnosis.lsa.umich.edu/static/assets/python.svg
+type: application
+version: 0.1.0
+keywords: ["fibermorph"]
+home: https://github.com/LSATS-RCI-Research/anthro-lasisi-fibermorph
+sources:
+  - https://github.com/LSATS-RCI-Research/anthro-lasisi-fibermorph
+dependencies: []
+maintainers:
+  - name: University of Michigan LSA Technology Services RCI Research Software Engineering Team
+    email: lsats-rci-research-programming@umich.edu

@@ -10,6 +10,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     STREAMLIT_SERVER_ADDRESS=0.0.0.0 \
     STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
 
+WORKDIR /app
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgl1 \
     libglib2.0-0 \
@@ -19,13 +21,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-RUN useradd -m -u 1000 user
-USER user
-ENV HOME=/home/user \
-    PATH=/home/user/.local/bin:$PATH
-WORKDIR $HOME/app
-
-COPY --chown=user . $HOME/app
+# Copy everything here into the container at /app.
+COPY . /app
 
 RUN python -m pip install --upgrade pip && \
     python -m pip install ".[gui]"
