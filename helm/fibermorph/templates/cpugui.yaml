@@ -13,8 +13,6 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: {{ ( print .Release.Name "-cpu-gui" ) | quote }}
-      annotations:
-        rollme: {{ randAlphaNum 5 | quote }}
     spec:
       {{- with .Values.global.imagePullSecrets }}
       imagePullSecrets:
@@ -26,7 +24,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
           ports:
             - name: "cpu-gui"
-              containerPort: 8000
+              containerPort: 7860
 ---
 apiVersion: v1
 kind: Service
