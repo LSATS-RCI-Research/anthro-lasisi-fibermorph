@@ -3,12 +3,12 @@ global:
     - name: dockerhub-pull
 
 ingress:
-  hostname: tandem-staging.apps.aws.web.umich.edu
+  hostname: fibermorph-staging.apps.aws.web.umich.edu
 
 image:
   registry: docker.io
   repository: lsatsrciresearch/fibermorph
-  tag: edge
+  tag: latest # Change this to edge eventually?
   pullPolicy: Always
 
 application:

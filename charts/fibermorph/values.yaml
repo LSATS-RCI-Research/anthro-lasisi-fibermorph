@@ -2,7 +2,7 @@ global:
   imagePullSecrets: []
 
 ingress:
-  hostname: tandem-prod.apps.aws.web.umich.edu
+  hostname: fibermorph .apps.aws.web.umich.edu
 
 image:
   registry: docker.io
