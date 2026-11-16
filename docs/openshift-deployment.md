@@ -11,13 +11,12 @@ application whenever a yet-to-be-determined tag or release is created.
 - Create a Secret named `dockerhub-pull` with the lsatsrciresearch team DockerHub pull credentials (available in passwordstate). This will allow OpenShift to pull the image from DockerHub.
 
 ## Build and Push Docker Image
-1. Build the Docker image locally:
+1. Build the multi-arch Docker image locally and then push to DockerHub:
    ```bash
-   docker build --tag lsatsrciresearch/fibermorph:latest .
-   ```
-2. Push the Docker image to DockerHub:
-   ```bash
-   docker push lsatsrciresearch/fibermorph:latest
+   docker buildx build \
+  --platform linux/amd64,linux/arm64 \
+  --tag lsatsrciresearch/fibermorph:latest \
+  --push .
    ```
 
 ## Deploy to OpenShift
