@@ -3,7 +3,7 @@ global:
     - name: dockerhub-pull
 
 ingress:
-  hostname: fibermorph-staging.apps.aws.web.umich.edu
+  hostname: fibermorph-staging.apps.gnosis.lsa.umich.edu
 
 image:
   registry: docker.io
